@@ -1,4 +1,5 @@
 import './assets/main.css'
+import './assets/color.palette.css'
 
 
 import { createApp } from 'vue'

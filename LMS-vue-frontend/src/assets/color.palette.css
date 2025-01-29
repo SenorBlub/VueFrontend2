@@ -1,0 +1,31 @@
+/* 🌙 Dark Mode */
+:root {
+  --text-primary: #F9F9F9;
+  --accent-primary: #B76BE9;
+  --accent-secondary: #803ABF;
+  --accent-tertiary: #452858;
+  
+  --background-primary: #1A1A1A;
+  --background-secondary: #2A2A2A;
+
+  --danger: #AD2700;
+  --caution: #ED6032;
+  --alert: #F9F871;
+  --success: #007767;
+}
+
+/* ☀️ Light Mode */
+[data-theme="light"] {
+    --text-primary: #1A1A1A;
+    --accent-primary: #9243D9;
+    --accent-secondary: #570CB5;
+    --accent-tertiary: #8D6EAB;
+    
+    --background-primary: #E5E5E5;
+    --background-secondary: #CFCFCF;
+  
+    --danger: #D84F38;
+    --caution: #F9A26C;
+    --alert: #FFE680;
+    --success: #00A884;
+}
