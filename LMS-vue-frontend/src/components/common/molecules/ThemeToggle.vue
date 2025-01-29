@@ -1,33 +1,43 @@
 <script setup lang="ts">
-import CalendarIcon from '../atoms/icons/CalendarIcon.vue';
-import CardsIcon from '../atoms/icons/CardsIcon.vue';
-import DarkIcon from '../atoms/icons/DarkIcon.vue';
-import LightIcon from '../atoms/icons/LightIcon.vue';
-import RepeatIcon from '../atoms/icons/RepeatIcon.vue';
-import SettingsIcon from '../atoms/icons/SettingsIcon.vue';
-import SparklesIcon from '../atoms/icons/SparklesIcon.vue';
-import TimelapseIcon from '../atoms/icons/TimelapseIcon.vue';
-import ZoomIcon from '../atoms/icons/ZoomIcon.vue';
+import { ref, onMounted, watch } from "vue";
+import DarkIcon from "../atoms/icons/DarkIcon.vue";
+import LightIcon from "../atoms/icons/LightIcon.vue";
 
+// Props
+const props = defineProps({
+  size: { type: String, default: "small" }
+});
+
+// Reactive theme state
+const theme = ref(document.documentElement.getAttribute("data-theme") || "light");
+
+// Function to toggle theme
 const toggleTheme = () => {
-  const currentTheme = document.documentElement.getAttribute("data-theme");
-  document.documentElement.setAttribute(
-    "data-theme",
-    currentTheme === "light" ? "dark" : "light"
-  );
+  theme.value = theme.value === "light" ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", theme.value);
 };
 
+// Update theme if changed externally
+onMounted(() => {
+  const observer = new MutationObserver(() => {
+    theme.value = document.documentElement.getAttribute("data-theme") || "light";
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+});
+
+// Watch for theme changes and update UI
+watch(theme, (newTheme) => {
+  document.documentElement.setAttribute("data-theme", newTheme);
+});
 </script>
 
 <template>
-  <DarkIcon size="small" color="text" />
-  <RepeatIcon size="small" color="text" />
-  <CalendarIcon size="small" color="text" />
-  <RepeatIcon size="small" color="text" />
-  <ZoomIcon size="small" color="text" />
-  <CardsIcon size="small" color="text" />
-  <LightIcon size="small" color="text" />
-  <SettingsIcon size="small" color="text" />
-  <SparklesIcon size="small" color="text" />
-  <TimelapseIcon size="small" color="text" />
+  <button id="ThemeToggleButton" @click="toggleTheme">
+    <DarkIcon v-if="theme === 'light'" :size="props.size" color="text" />
+    <LightIcon v-else :size="props.size" color="text" />
+  </button>
 </template>

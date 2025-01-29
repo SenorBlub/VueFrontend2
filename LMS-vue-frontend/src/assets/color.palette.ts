@@ -36,8 +36,6 @@ const colorVariableMap: Record<string, string> = {
       console.warn(`getPaletteColor: CSS variable '${cssVar}' not found.`);
       return "#2A2A2A"; // Default fallback
     }
-
-    console.log(computedColor);
   
     return  computedColor;
   }
