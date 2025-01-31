@@ -182,40 +182,40 @@ const computedVariantClass = computed(() => {
 const computedWidthClass = computed(() => {
     switch(props.width){
         case "xs": 
-            return "w-[5vw]" // 8 in figma
+            return "w-[6rem]" // 8 in figma
         case "sm":
-            return "w-[6.25vw]" // 10 in figma
+            return "w-[7.5rem]" // 10 in figma
         case "md":
-            return "w-[8.125vw]" // 13 in figma
+            return "w-[9.75rem]" // 13 in figma
         case "lg":
-            return "w-[9.375vw]" // 15 in figma
+            return "w-[11.25rem]" // 15 in figma
         case "xl":
-            return "w-[11.25vw]" // 18 in figma
+            return "w-[13.5rem]" // 18 in figma
         case "screenwide-sm":
-            return "w-[56.875vw]" // 91 in figma
+            return "w-[68.25rem]" // 91 in figma
         case "screenwide-lg":
-            return "w-[59.375vw]" // 95 in figma
+            return "w-[71.25rem]" // 95 in figma
         default: 
-            return "w-[8.125vw]"
+            return "w-[9.75rem]"
     }
 })
 
 const computedHeightClass = computed(() =>{
     switch(props.height){
         case "xs": 
-            return "h-[5.556vh]" // 5 in figma
+            return "h-[3.75rem]" // 5 in figma
         case "sm":
-            return "h-[6.667vh]" // 6 in figma
+            return "h-[4.5rem]" // 6 in figma
         case "md":
-            return "h-[7.778vh]" // 7 in figma
+            return "h-[5.25rem]" // 7 in figma
         case "lg":
-            return "h-[8.889vh]" // 8 in figma
+            return "h-[6rem]" // 8 in figma
         case "xl":
-            return "h-[9vh]" // 10 in figma
+            return "h-[7.5rem]" // 10 in figma
         case "2xl":
-            return "h-[24.444vh]" // 22 in figma
+            return "h-[16.5rem]" // 22 in figma
         default: 
-            return "h-[6.667vh]"
+            return "h-[5.25rem]"
     }
 })
 
