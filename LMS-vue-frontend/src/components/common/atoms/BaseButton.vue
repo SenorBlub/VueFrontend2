@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, defineProps, onMounted, onUnmounted, ref } from "vue"
 
-// version 1 of this component
+// version 2 of this component
 
 const isMobile = ref(false);
 
@@ -239,7 +239,7 @@ const computedClasses = computed(() => {
 
     /* States */
     computedDisabledClass.value,
-    "flex items-center justify-center text-center"
+    "flex items-center justify-center text-center hover:brightness-110 active:brightness-125 transition-all duration-100"
     ]
 })
 
