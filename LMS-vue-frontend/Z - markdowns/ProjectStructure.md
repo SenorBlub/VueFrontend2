@@ -129,7 +129,7 @@ To ensure elements are easily findable in debugging, automation, or JavaScript l
 ### **2️⃣ CSS Naming Best Practices**
 When using **@layer components** in TailwindCSS or custom CSS files:
 - Use **BEM-style naming** for clarity: `block__element--modifier`
-- Define reusable Tailwind classes inside `@layer components`
+- Define reusable Tailwind classes inside `@layer components`, define utilities in `@layer utilities`
 - Prefix utility styles with `u-` if applicable (e.g., `u-hidden`, `u-padding-md`)
 
 ### **3️⃣ ID & CSS Naming Examples**

@@ -1,28 +1,128 @@
-@import './base.css';
+@import './base.css'; 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .text-gradient-purple-tr{
-    @apply bg-clip-text text-transparent bg-gradient-to-tr from-[#B76BE9] to-[#570CB5];
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
   }
 
-  .text-gradient-purple-br{
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-[#B76BE9] to-[#570CB5];
+  /* 🌈 Purple Gradients */
+  .text-gradient-purple-tr {
+    @apply text-gradient bg-gradient-to-tr from-[--accent-primary] to-[--accent-secondary];
   }
 
-  .text-gradient-purple-tl{
-    @apply bg-clip-text text-transparent bg-gradient-to-tl from-[#B76BE9] to-[#570CB5];
+  .text-gradient-purple-br {
+    @apply text-gradient bg-gradient-to-br from-[--accent-primary] to-[--accent-secondary];
   }
 
-  .text-gradient-purple-bl{
-    @apply bg-clip-text text-transparent bg-gradient-to-bl from-[#B76BE9] to-[#570CB5];
+  .text-gradient-purple-tl {
+    @apply text-gradient bg-gradient-to-tl from-[--accent-primary] to-[--accent-secondary];
   }
 
-  .text-gradient-purple-through{
-    @apply inline-block bg-clip-text text-transparent bg-gradient-to-br from-[#570CB5] from-20% via-[#B76BE9] via-50% to-[#570CB5] to-90%;
+  .text-gradient-purple-bl {
+    @apply text-gradient bg-gradient-to-bl from-[--accent-primary] to-[--accent-secondary];
+  }
+
+  .text-gradient-purple-through {
+    @apply text-gradient bg-gradient-to-br from-[--accent-secondary] from-20% via-[--accent-primary] via-50% to-[--accent-secondary] to-90%;
+  }
+
+  /* 🔲 Background Classes */
+  .bg-primary {
+    @apply bg-[--background-primary];
+  }
+
+  .bg-secondary {
+    @apply bg-[--background-secondary];
+  }
+
+  /* 🔤 Text Color Classes */
+  .text-text {
+    @apply text-[--text-primary];
+  }
+
+  .text-primary {
+    @apply text-[--accent-primary];
+  }
+
+  .text-secondary {
+    @apply text-[--accent-secondary];
+  }
+
+  .text-tertiary {
+    @apply text-[--accent-tertiary];
+  }
+  
+  .text-bg-primary {
+    @apply text-[--background-primary]
+  }
+
+  .text-bg-secondary {
+    @apply text-[--background-secondary]
+  }
+
+  /* ⚠️ Status Colors */
+  .text-danger {
+    @apply text-[--danger];
+  }
+
+  .text-caution {
+    @apply text-[--caution];
+  }
+
+  .text-alert {
+    @apply text-[--alert];
+  }
+
+  .text-success {
+    @apply text-[--success];
+  }
+
+  /* 🔳 Border Colors */
+  .border-primary {
+    @apply border-[--accent-primary];
+  }
+
+  .border-secondary {
+    @apply border-[--accent-secondary];
+  }
+
+  .border-tertiary {
+    @apply border-[--accent-tertiary];
+  }
+
+  .border-bg-primary {
+    @apply border-[--background-primary]
+  }
+
+  .border-bg-secondary {
+    @apply border-[--background-secondary]
+  }
+
+  .border-danger {
+    @apply border-[--danger];
+  }
+
+  .border-caution {
+    @apply border-[--caution];
+  }
+
+  .border-alert {
+    @apply border-[--alert];
+  }
+
+  .border-success {
+    @apply border-[--success];
+  }
+}
+
+
+@layer utilities {
+  .u-disabled {
+    @apply opacity-50 cursor-not-allowed;
   }
 }
 
